@@ -1,4 +1,4 @@
-import { START_GAME, BACK_TO_MENU, TURN_CARD, CHECK_FOR_PAIR, TIMER_TICK } from '../actions/game'
+import { START_GAME, BACK_TO_MENU, TURN_CARD, CHECK_FOR_PAIR } from '../actions/game'
 import { randomizeArray } from '../helpers/arrays'
 
 /** The board reducer is responsible for managing the state of the cards within the game
@@ -65,6 +65,7 @@ export default function board(state = initialState, action) {
     {
       // If no card has been selected, this one can stay visible
       if(state.selectedCard === null) {
+        action.card.visible=true;
         return {
           cards: state.cards,
           selectedCard: action.card,
@@ -89,7 +90,7 @@ export default function board(state = initialState, action) {
         cards: [...state.cards],
         selectedCard: null,
         complete: state.complete,
-        canTurnCard: true
+        canTurnCard: !state.complete
       }
     }
     case BACK_TO_MENU:
