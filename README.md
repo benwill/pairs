@@ -20,7 +20,7 @@ All tests are found in the test folder.
 
 ## Constants
 
-In the constants/application folder, you can change a few settings, the cheat one is particularly useful (turn it to TRUE) to allow you to make the card numbers visible.
+In the constants/application.js file, you can change a few settings, the cheat one is particularly useful (turn it to TRUE) to allow you to make the card numbers visible.
 
 ## Tech
 
@@ -35,8 +35,9 @@ In the constants/application folder, you can change a few settings, the cheat on
 
 I only had this weekend to work on this and unfortunately ran into a few issues I didn't have time to resolve:
 
-* Images - couldn't figure out how to use the shared svg sprite sheet and also resize the images, so pulled them out into seperate files. From what I could tell I needed to use the Svg tag and using xlink, but I struggled to get it working with webpack.
-* Unit testing - I spent a while trying to get jest working to test the components, so in the end switched to using mocha.
+* Unit testing - I spent a while trying to get jest working to test the components, so in the end switched to using mocha and just did some unit tests on the reducers.
+* Images - couldn't figure out how to use the shared svg sprite sheet and also resize the images, so pulled them out into seperate files. From what I could tell I needed to use the Svg tag and using xlink, but I struggled to get it working with webpack within the time I had.
+* IE support - just down to time (some animations/using array.find method)...
 
 ## Future work/improvements
 
