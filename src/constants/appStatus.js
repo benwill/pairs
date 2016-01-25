@@ -1,0 +1,5 @@
+export const APP_STATUS = {
+  MENU : 'MENU',
+  PLAYING: 'PLAYING',
+  SCOREBOARD : 'SCOREBOARD'
+}

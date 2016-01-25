@@ -1,0 +1,70 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+/* effects */
+@keyframes fadein {  from {opacity:0; }  to {opacity:1;}}
+@-moz-keyframes fadein { from {opacity:0;}  to { opacity:1;}}
+@-webkit-keyframes fadein {from { opacity:0;  } to { opacity:1; }}
+@-o-keyframes fadein {from { opacity:0;} to { opacity: 1;}}
+
+/* layout */
+body { font: 100% Helvetica, sans-serif; color: #000000;}
+.clearfix { clear:both;}
+.app-wrapper { margin: auto; max-width: 1200px; position:relative;}
+
+/* Forms */
+a, input, select { padding:10px; margin: 10px 10px 10px 0;}
+a { background: $button-bg-color; color:$button-text-color; padding:10px; display:inline-block; margin-right:10px; border-radius:5px; @include addShadow; cursor:pointer; border:1px solid $border-color;}
+a.disabled { background: $error-color;}
+
+/* Tables */
+table { width:100%;}
+table tr td, table tr th { text-align:left; padding:10px;}
+table tr th { border-bottom:1px solid $border-color;}
+table>tbody>tr:nth-of-type(odd) { background-color:#f9f9f9}
+
+/* Menu */
+.main-menu {  padding:20px; text-align:center; }
+.main-menu h1 {@include fade-me(1s)}
+
+/* Game */
+.winner-message { width: 300px; @include alert}
+.timer { font-size:22px; float:right; }
+
+/* Cards */
+// Css animation taken from: https://davidwalsh.name/css-flip
+
+/* entire container, keeps perspective */
+.card { perspective: 1000px; float:left; margin:10px; border:1px solid $border-color; border-radius:10px; padding:5px;}
+.card.card-hidden { cursor:pointer;}
+/* flip the pane when hovered */
+.card.card-hidden .flipper, .flip-container.hover .flipper {  transform: rotateY(180deg);}
+.card, .front, .back { width:150px; height:220px; }
+
+/* flip speed goes here */
+.flipper { transition: 0.6s; transform-style: preserve-3d; position: relative;}
+
+/* hide back of pane during swap */
+.card .flipper .front, .back {  backface-visibility: hidden; position: absolute; top: 0; left: 0;}
+
+/* front pane, placed above back */
+.card .flipper .front { z-index: 2; transform: rotateY(0deg);}
+
+/* back, initially hidden pane */
+.card .flipper .back { transform: rotateY(180deg); @include svgBackground('./card-back.svg')}
+
+/* Different card styles */
+.card.card-1 .flipper .front { @include svgBackground('./card-front-1.svg');}
+.card.card-2 .flipper .front { @include svgBackground('./card-front-2.svg');}
+.card.card-3 .flipper .front { @include svgBackground('./card-front-3.svg');}
+.card.card-4 .flipper .front { @include svgBackground('./card-front-4.svg');}
+.card.card-5 .flipper .front { @include svgBackground('./card-front-5.svg');}
+.card.card-6 .flipper .front { @include svgBackground('./card-front-6.svg');}
+.card.card-7 .flipper .front { @include svgBackground('./card-front-7.svg');}
+.card.card-8 .flipper .front { @include svgBackground('./card-front-8.svg');}
+.card.card-9 .flipper .front { @include svgBackground('./card-front-9.svg');;}
+.card.card-10 .flipper .front { @include svgBackground('./card-front-10.svg');}
+
+
+
+

@@ -1,0 +1,30 @@
+/* mixins */
+@mixin addShadow(){
+  box-shadow: $shadow-color 4px 3px 5px;
+}
+
+@mixin svgBackground($path){
+  background: url($path) no-repeat; background-size: contain;
+}
+
+@mixin fade-me($time) {
+  animation: fadein $time;
+  -moz-animation: fadein $time;
+  -webkit-animation: fadein $time;
+  -o-animation: fadein $time;
+}
+
+@mixin alert() {
+  color: $alert-text-color;
+  background: $alert-bg-color;
+  @include fade-me(1s);
+  position:absolute;
+  margin: auto;
+  left:0;
+  right:0;
+  top:30%;
+  padding:50px;
+  border:2px solid $border-color;
+  border-radius:5px;
+  @include addShadow
+}
