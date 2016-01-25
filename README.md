@@ -20,7 +20,7 @@ All tests are found in the test folder.
 
 ## Constants
 
-In the constants/application.js file, you can change a few settings, the cheat one is particularly useful (turn it to TRUE) to allow you to make the card numbers visible.
+In the constants/application.js file, you can change a few settings, the cheat one is particularly useful; setting it to true allows you to make the card numbers visible.
 
 ## Tech
 
